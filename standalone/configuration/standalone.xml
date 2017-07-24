@@ -124,6 +124,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+                <!--
                 <datasource jndi-name="java:jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:h2:${jboss.server.data.dir}/keycloak;AUTO_SERVER=TRUE</connection-url>
                     <driver>h2</driver>
@@ -132,7 +133,27 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+                -->
+                <datasource jndi-name="java:jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true" use-java-context="true">
+                    <connection-url>[CONNECTION_URL]</connection-url>
+                    <driver>postgresql</driver>
+                    <pool>
+                        <!-- It is expensive to open a new connection to a database every time you want to perform a
+                        transaction. To compensate, the datasource implementation maintains a pool of open connections.
+                        The max-pool-size specifies the maximum number of connections it will pool. You may want to
+                        change the value of this depending on the load of your system. -->
+                        <max-pool-size>20</max-pool-size>
+                    </pool>
+                    <security>
+                        <!-- Username and password for the database -->
+                        <user-name>[USER_NAME]</user-name>
+                        <password>[PASSWORD]</password>
+                    </security>
+                </datasource>
                 <drivers>
+                    <driver name="postgresql" module="org.postgresql">
+                        <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+                    </driver>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>

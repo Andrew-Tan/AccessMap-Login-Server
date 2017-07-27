@@ -96,86 +96,105 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="profile-tabs">
-                            <div class="nav-align-center">
-                                <ul class="nav nav-pills" role="tablist">
-                                    <li class="<#if active=='account'>active</#if>">
-                                        <a href="${url.accountUrl}">
-                                            <i class="material-icons">person</i>
-                                        ${msg("account")}
-                                        </a>
-                                    </li>
-                                    <#if features.passwordUpdateSupported>
-                                        <li class="<#if active=='password'>active</#if>">
-                                            <a href="${url.passwordUrl}">
-                                                <i class="material-icons">lock</i>
-                                            ${msg("password")}
-                                            </a>
-                                        </li>
-                                    </#if>
-                                    <#if features.identityFederation>
-                                        <li class="<#if active=='social'>active</#if>">
-                                            <a href="${url.socialUrl}">
-                                                <i class="material-icons">people</i>
-                                            ${msg("federatedIdentity")}
-                                            </a>
-                                        </li>
-                                    </#if>
-                                    <li class="<#if active=='sessions'>active</#if>">
-                                        <a href="${url.sessionsUrl}">
-                                            <i class="material-icons">schedule</i>
-                                        ${msg("sessions")}
-                                        </a>
-                                    </li>
-                                    <li class="<#if active=='applications'>active</#if>">
-                                        <a href="${url.applicationsUrl}">
-                                            <i class="material-icons">apps</i>
-                                        ${msg("applications")}
-                                        </a>
-                                    </li>
-                                    <#if features.log>
-                                        <li class="<#if active=='log'>active</#if>">
-                                            <a href="${url.logUrl}">
-                                                <i class="material-icons">event</i>
-                                            ${msg("log")}
-                                            </a>
-                                        </li>
-                                    </#if>
-                                </ul>
+                    <div class="col-md-12 col-md-offset-0">
 
-                                <div class="tab-content">
-                                    <#if message?has_content>
-                                        <#if message.type = 'success'>
-                                        <div class="alert alert-success"></#if>
-                                        <#if message.type = 'error'>
-                                        <div class="alert alert-danger"></#if>
-                                            <div class="container-fluid">
-                                                <div class="alert-icon">
-                                                    <#if message.type = 'success'>
-                                                        <i class="material-icons">check</i>
-                                                    </#if>
-                                                    <#if message.type = 'error'>
-                                                        <i class="material-icons">error_outline</i>
-                                                    </#if>
-                                                </div>
-                                                <button type="button" class="close" data-dismiss="alert"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
-                                                </button>
-                                                ${message.summary}
-                                            </div>
-                                        </div>
-                                    </#if>
+                        <!-- Menu Start -->
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Features</a>
                                 </div>
 
-                                <div class="tab-content gallery">
-                                    <#nested "content">
+                                <div class="collapse navbar-collapse" id="example-navbar">
+                                    <ul class="nav navbar-nav">
+                                        <li class="<#if active=='account'>active</#if>">
+                                            <a href="${url.accountUrl}">
+                                                <i class="material-icons">person</i>
+                                            ${msg("account")}
+                                            </a>
+                                        </li>
+                                        <#if features.passwordUpdateSupported>
+                                            <li class="<#if active=='password'>active</#if>">
+                                                <a href="${url.passwordUrl}">
+                                                    <i class="material-icons">lock</i>
+                                                ${msg("password")}
+                                                </a>
+                                            </li>
+                                        </#if>
+                                        <li class="<#if active=='totp'>active</#if>">
+                                            <a href="${url.totpUrl}">
+                                                <i class="material-icons">vpn_lock</i>
+                                                ${msg("authenticator")}
+                                            </a>
+                                        </li>
+                                        <#if features.identityFederation>
+                                            <li class="<#if active=='social'>active</#if>">
+                                                <a href="${url.socialUrl}">
+                                                    <i class="material-icons">people</i>
+                                                ${msg("federatedIdentity")}
+                                                </a>
+                                            </li>
+                                        </#if>
+                                        <li class="<#if active=='sessions'>active</#if>">
+                                            <a href="${url.sessionsUrl}">
+                                                <i class="material-icons">schedule</i>
+                                            ${msg("sessions")}
+                                            </a>
+                                        </li>
+                                        <li class="<#if active=='applications'>active</#if>">
+                                            <a href="${url.applicationsUrl}">
+                                                <i class="material-icons">apps</i>
+                                            ${msg("applications")}
+                                            </a>
+                                        </li>
+                                        <#if features.log>
+                                            <li class="<#if active=='log'>active</#if>">
+                                                <a href="${url.logUrl}">
+                                                    <i class="material-icons">event</i>
+                                                ${msg("log")}
+                                                </a>
+                                            </li>
+                                        </#if>
+                                    </ul>
                                 </div>
                             </div>
+                        </nav>
+                        <!-- Menu End -->
+
+
+                        <div class="tab-content">
+                            <#if message?has_content>
+                                <#if message.type = 'success'>
+                                <div class="alert alert-success"></#if>
+                                <#if message.type = 'error'>
+                                <div class="alert alert-danger"></#if>
+                                <div class="container-fluid">
+                                    <div class="alert-icon">
+                                        <#if message.type = 'success'>
+                                            <i class="material-icons">check</i>
+                                        </#if>
+                                        <#if message.type = 'error'>
+                                            <i class="material-icons">error_outline</i>
+                                        </#if>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                ${message.summary}
+                                </div>
+                            </div>
+                            </#if>
+
+                            <#nested "content">
                         </div>
-                        <!-- End Profile Tabs -->
-                    </div>
+
                     </div>
                 </div>
             </div>

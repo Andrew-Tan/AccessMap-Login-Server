@@ -7,26 +7,45 @@
         </div>
     </div>
 
-    <form action="${url.passwordUrl}" class="form-horizontal" method="post">
-        <#list federatedIdentity.identities as identity>
-            <div class="form-group">
-                <div class="col-sm-2 col-md-2">
-                    <label for="${identity.providerId!}" class="control-label">${identity.displayName!}</label>
-                </div>
-                <div class="col-sm-5 col-md-5">
-                    <input disabled="true" class="form-control" value="${identity.userName!}">
-                </div>
-                <div class="col-sm-5 col-md-5">
+    <form action="${url.passwordUrl}" class="form" method="post">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Provider</th>
+                <th>Username</th>
+                <th class="text-right">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list federatedIdentity.identities as identity>
+            <tr>
+                <td>${identity.displayName!}</td>
+                <td>${identity.userName!}</td>
+                <td class="td-actions text-right">
                     <#if identity.connected>
                         <#if federatedIdentity.removeLinkPossible>
-                            <a href="${identity.actionUrl}" type="submit" id="remove-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}">${msg("doRemove")}</a>
+                            <a href="${identity.actionUrl}" type="submit" id="remove-${identity.providerId!}">
+                                <button type="button" rel="tooltip" title="${msg("doRemove")}"
+                                        class="btn btn-danger btn-simple btn-xs">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </a>
                         </#if>
                     <#else>
-                        <a href="${identity.actionUrl}" type="submit" id="add-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}">${msg("doAdd")}</a>
+                        <a href="${identity.actionUrl}" type="submit" id="add-${identity.providerId!}">
+                            <button type="button" rel="tooltip" title="${msg("doAdd")}"
+                                    class="btn btn-success btn-simple btn-xs">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </a>
                     </#if>
-                </div>
-            </div>
-        </#list>
+                </td>
+            </tr>
+            </#list>
+            </tbody>
+        </table>
+
     </form>
 
 </@layout.mainLayout>

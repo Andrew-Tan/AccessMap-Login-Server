@@ -7,14 +7,14 @@
         </div>
     </div>
 
-    <table class="table table-striped table-bordered">
+    <table class="table">
         <thead>
         <tr>
-            <td>${msg("date")}</td>
-            <td>${msg("event")}</td>
-            <td>${msg("ip")}</td>
-            <td>${msg("client")}</td>
-            <td>${msg("details")}</td>
+            <th>${msg("date")}</th>
+            <th>${msg("event")}</th>
+            <th>${msg("ip")}</th>
+            <th>${msg("client")}</th>
+            <th>${msg("details")}</th>
         </tr>
         </thead>
 

@@ -7,17 +7,16 @@
         </div>
     </div>
 
-    <table class="table table-striped table-bordered">
+    <table class="table">
         <thead>
         <tr>
-            <td>${msg("ip")}</td>
-            <td>${msg("started")}</td>
-            <td>${msg("lastAccess")}</td>
-            <td>${msg("expires")}</td>
-            <td>${msg("clients")}</td>
+            <th>${msg("ip")}</th>
+            <th>${msg("started")}</th>
+            <th>${msg("lastAccess")}</th>
+            <th>${msg("expires")}</th>
+            <th>${msg("clients")}</th>
         </tr>
         </thead>
-
         <tbody>
         <#list sessions.sessions as session>
             <tr>
@@ -33,9 +32,13 @@
             </tr>
         </#list>
         </tbody>
-
     </table>
 
-    <a id="logout-all-sessions" href="${url.sessionsLogoutUrl}">${msg("doLogOutAllSessions")}</a>
+<div class="text-center">
+    <a id="logout-all-sessions" href="${url.sessionsLogoutUrl}">
+        <button type="button" class="btn btn-danger btn-lg">${msg("doLogOutAllSessions")}</button>
+    </a>
+</div>
+
 
 </@layout.mainLayout>

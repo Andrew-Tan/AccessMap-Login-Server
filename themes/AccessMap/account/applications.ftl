@@ -11,24 +11,23 @@
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
         <input type="hidden" id="referrer" name="referrer" value="${stateChecker?html}">
 
-        <table class="table table-striped table-bordered">
+        <table class="table">
             <thead>
-              <tr>
+            <tr>
                 <td>${msg("application")}</td>
                 <td>${msg("availablePermissions")}</td>
                 <td>${msg("grantedPermissions")}</td>
                 <td>${msg("grantedPersonalInfo")}</td>
                 <td>${msg("additionalGrants")}</td>
                 <td>${msg("action")}</td>
-              </tr>
+            </tr>
             </thead>
-
             <tbody>
-              <#list applications.applications as application>
+                <#list applications.applications as application>
                 <tr>
                     <td>
                         <#if application.client.baseUrl??><a href="${application.client.baseUrl}"></#if>
-                            <#if application.client.name??>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
+                        <#if application.client.name??>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
                         <#if application.client.baseUrl??></a></#if>
                     </td>
 
@@ -41,7 +40,7 @@
                             <#if application.realmRolesAvailable?has_content>, </#if>
                             <#list application.resourceRolesAvailable[resource] as clientRole>
                                 <#if clientRole.roleDescription??>${advancedMsg(clientRole.roleDescription)}<#else>${advancedMsg(clientRole.roleName)}</#if>
-                                ${msg("inResource")} <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
+                            ${msg("inResource")} <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
                                 <#if clientRole_has_next>, </#if>
                             </#list>
                         </#list>
@@ -57,7 +56,7 @@
                                 <#if application.realmRolesGranted?has_content>, </#if>
                                 <#list application.resourceRolesGranted[resource] as clientRole>
                                     <#if clientRole.roleDescription??>${advancedMsg(clientRole.roleDescription)}<#else>${advancedMsg(clientRole.roleName)}</#if>
-                                    ${msg("inResource")} <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
+                                ${msg("inResource")} <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
                                     <#if clientRole_has_next>, </#if>
                                 </#list>
                             </#list>
@@ -69,7 +68,7 @@
                     <td>
                         <#if application.client.consentRequired>
                             <#list application.claimsGranted as claim>
-                                ${advancedMsg(claim)}<#if claim_has_next>, </#if>
+                            ${advancedMsg(claim)}<#if claim_has_next>, </#if>
                             </#list>
                         <#else>
                             <strong>${msg("fullAccess")}</strong>
@@ -77,8 +76,8 @@
                     </td>
 
                     <td>
-                       <#list application.additionalGrants as grant>
-                            ${advancedMsg(grant)}<#if grant_has_next>, </#if>
+                        <#list application.additionalGrants as grant>
+                        ${advancedMsg(grant)}<#if grant_has_next>, </#if>
                         </#list>
                     </td>
 
@@ -88,7 +87,7 @@
                         </#if>
                     </td>
                 </tr>
-              </#list>
+                </#list>
             </tbody>
         </table>
     </form>

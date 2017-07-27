@@ -12,12 +12,9 @@
                 <#if realm.password && social.providers??>
                     <div id="kc-social-providers" class="social-line">
                         <#list social.providers as p>
-                            <a href="${p.loginUrl}" class="btn btn-simple btn-just-icon">
-                                <i class="fa fa-${p.alias}"></i>
+                            <a href="${p.loginUrl}" class="btn btn-simple btn-xs" title="${p.displayName}">
+                                <i class="fa fa-${p.alias}"></i> ${p.providerId}
                             </a>
-                            <!--
-                            <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
-                            -->
                         </#list>
                     </div>
                 </#if>

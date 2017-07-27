@@ -10,61 +10,62 @@
         </div>
     </div>
 
-    <form action="${url.accountUrl}" class="form-horizontal" method="post">
+
+
+
+
+
+<form class="form" action="${url.accountUrl}" method="post">
+    <div class="content">
 
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
 
         <#if !realm.registrationEmailAsUsername>
-            <div class="form-group ${messagesPerField.printIfExists('username','has-error')}">
-                <div class="col-sm-2 col-md-2">
-                    <label for="username" class="control-label">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
-                </div>
+            <div class="form-group label-floating ${messagesPerField.printIfExists('username','has-error')}">
+                <label for="username" class="control-label">
+                    ${msg("username")}
+                    <#if realm.editUsernameAllowed><span class="required">*</span></#if>
+                </label>
 
-                <div class="col-sm-10 col-md-10">
-                    <input type="text" class="form-control" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
-                </div>
+                <input type="text" class="form-control" id="username" name="username"
+                       <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
             </div>
         </#if>
 
-        <div class="form-group ${messagesPerField.printIfExists('email','has-error')}">
-            <div class="col-sm-2 col-md-2">
-            <label for="email" class="control-label">${msg("email")}</label> <span class="required">*</span>
-            </div>
+        <div class="form-group label-floating ${messagesPerField.printIfExists('email','has-error')}">
+            <label for="email" class="control-label">
+                ${msg("email")}
+                <span class="required">*</span>
+            </label>
 
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="email" name="email" autofocus value="${(account.email!'')?html}"/>
-            </div>
+            <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')?html}"/>
         </div>
 
-        <div class="form-group ${messagesPerField.printIfExists('firstName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="firstName" class="control-label">${msg("firstName")}</label> <span class="required">*</span>
-            </div>
+        <div class="form-group label-floating ${messagesPerField.printIfExists('firstName','has-error')}">
+            <label for="firstName" class="control-label">
+                ${msg("firstName")}
+                <span class="required">*</span>
+            </label>
 
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="firstName" name="firstName" value="${(account.firstName!'')?html}"/>
-            </div>
+            <input type="text" class="form-control" id="firstName" name="firstName" value="${(account.firstName!'')?html}"/>
         </div>
 
-        <div class="form-group ${messagesPerField.printIfExists('lastName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="lastName" class="control-label">${msg("lastName")}</label> <span class="required">*</span>
-            </div>
+        <div class="form-group label-floating ${messagesPerField.printIfExists('lastName','has-error')}">
+            <label for="lastName" class="control-label">
+                ${msg("lastName")}
+                <span class="required">*</span>
+            </label>
 
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="lastName" name="lastName" value="${(account.lastName!'')?html}"/>
-            </div>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="${(account.lastName!'')?html}"/>
         </div>
 
-        <div class="form-group">
-            <div id="kc-form-buttons" class="col-md-offset-2 col-md-10 submit">
-                <div class="">
-                    <#if url.referrerURI??><a href="${url.referrerURI}">${msg("backToApplication")}/a></#if>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Cancel">${msg("doCancel")}</button>
-                </div>
-            </div>
-        </div>
-    </form>
-
+    </div>
+    <div class="footer text-center">
+        <#if url.referrerURI??>
+            <a href="${url.referrerURI}" class="btn btn-simple btn-primary btn-lg">${msg("backToApplication")}</a>
+        </#if>
+        <button type="submit" class="btn btn-default btn-lg" name="submitAction" value="Cancel">${msg("doCancel")}</button>
+        <button type="submit" class="btn btn-primary btn-lg" name="submitAction" value="Save">${msg("doSave")}</button>
+    </div>
+</form>
 </@layout.mainLayout>

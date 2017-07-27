@@ -14,12 +14,12 @@
         <table class="table">
             <thead>
             <tr>
-                <td>${msg("application")}</td>
-                <td>${msg("availablePermissions")}</td>
-                <td>${msg("grantedPermissions")}</td>
-                <td>${msg("grantedPersonalInfo")}</td>
-                <td>${msg("additionalGrants")}</td>
-                <td>${msg("action")}</td>
+                <th>${msg("application")}</th>
+                <th>${msg("availablePermissions")}</th>
+                <th>${msg("grantedPermissions")}</th>
+                <th>${msg("grantedPersonalInfo")}</th>
+                <th>${msg("additionalGrants")}</th>
+                <th class="text-right">${msg("action")}</th>
             </tr>
             </thead>
             <tbody>
@@ -81,9 +81,12 @@
                         </#list>
                     </td>
 
-                    <td>
+                    <td class="td-actions text-right">
                         <#if (application.client.consentRequired && application.claimsGranted?has_content) || application.additionalGrants?has_content>
-                            <button type='submit' class='${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!}' id='revoke-${application.client.clientId}' name='clientId' value="${application.client.id}">${msg("revoke")}</button>
+                            <button type="submit" class="btn btn-danger btn-simple btn-xs" id='revoke-${application.client.clientId}'
+                                    name='clientId' value="${application.client.id}" rel="tooltip" title="${msg("revoke")}" >
+                                <i class="fa fa-times"></i>
+                            </button>
                         </#if>
                     </td>
                 </tr>

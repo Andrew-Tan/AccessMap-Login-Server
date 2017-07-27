@@ -53,7 +53,6 @@
 
             </div>
             <div class="footer text-center">
-                <!-- <a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a> -->
                 <button class="btn btn-primary" name="login" id="kc-login" type="submit">${msg("doLogIn")}</button>
             </div>
         </form>

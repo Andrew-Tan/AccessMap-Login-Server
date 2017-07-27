@@ -67,7 +67,7 @@
     	<div class="container">
         	<!-- Brand and toggle get grouped for better mobile display -->
         	<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
             		<span class="sr-only">Toggle navigation</span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
@@ -76,7 +76,7 @@
         		<a class="navbar-brand"><#nested "title"></a>
         	</div>
 
-        	<div class="collapse navbar-collapse" id="navigation-example">
+        	<div class="collapse navbar-collapse" id="navigation">
         		<ul class="nav navbar-nav navbar-right">
     				<li>
 						<a href="/">
@@ -85,7 +85,11 @@
     				</li>
 					<#if realm.internationalizationEnabled>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">${locale.current}</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="material-icons">language</i>
+								${locale.current}
+                                <i class="material-icons">arrow_drop_down</i>
+							</a>
                             <ul class="dropdown-menu">
 								<#list locale.supported as l>
                                     <li><a href="${l.url}">${l.label}</a></li>

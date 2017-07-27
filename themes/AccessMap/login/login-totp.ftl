@@ -5,29 +5,17 @@
     <#elseif section = "header">
         ${msg("loginTitleHtml",realm.displayNameHtml)}
     <#elseif section = "form">
-        <form id="kc-totp-login-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="totp" class="${properties.kcLabelClass!}">${msg("loginTotpOneTime")}</label>
-                </div>
-
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input id="totp" name="totp" autocomplete="off" type="text" class="${properties.kcInputClass!}" autofocus />
+        <form id="kc-totp-login-form" class="form" action="${url.loginAction}" method="post">
+            <div class="content">
+                <div class="form-group label-floating">
+                    <label for="totp" class="control-label">${msg("loginTotpOneTime")}</label>
+                    <input id="totp" name="totp" autocomplete="off" type="text" class="form-control" autofocus/>
                 </div>
             </div>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                    </div>
-                </div>
-
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <div class="${properties.kcFormButtonsWrapperClass!}">
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="cancel" id="kc-cancel" type="submit" value="${msg("doCancel")}"/>
-                    </div>
-                </div>
+            <div class="footer text-center">
+                <button class="btn btn-default" name="cancel" id="kc-cancel" type="submit">${msg("doCancel")}</button>
+                <button class="btn btn-primary" name="login" id="kc-login" type="submit">${msg("doLogIn")}</button>
             </div>
         </form>
     </#if>

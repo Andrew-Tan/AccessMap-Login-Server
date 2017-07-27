@@ -35,7 +35,7 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -44,12 +44,14 @@
             <a class="navbar-brand">AccessMap</a>
         </div>
 
-        <div class="collapse navbar-collapse" id="navigation-example">
+        <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
                 <#if realm.internationalizationEnabled>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="material-icons">language</i> ${locale.current}
+                            <i class="material-icons">language</i>
+                            ${locale.current}
+                            <i class="material-icons">arrow_drop_down</i>
                         </a>
                         <ul class="dropdown-menu">
                             <#list locale.supported as l>
@@ -61,7 +63,7 @@
                 <#if referrer?has_content && referrer.url?has_content>
                     <li>
                         <a id="referrer" href="${referrer.url}">
-                            <i class="material-icons">undo</i> ${msg("backTo",referrer.name)}
+                            <i class="material-icons">arrow_back</i> ${msg("backTo",referrer.name)}
                         </a>
                     </li>
                 </#if>
@@ -78,7 +80,7 @@
 <div class="wrapper">
 
     <div class="header header-filter"
-         style="background-image: url('${url.resourcesPath}/img/examples/city.jpg');"></div>
+         style="background-image: url('${url.resourcesPath}/img/city.jpg');"></div>
 
 
     <div class="main main-raised">

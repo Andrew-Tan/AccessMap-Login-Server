@@ -6,10 +6,12 @@
     ${msg("termsTitleHtml")}
     <#elseif section = "form">
     <form class="form" action="${url.loginAction}" method="POST">
-        <div class="form-group">
-            <textarea id="kc-terms-text" class="form-control" placeholder="Here can be your nice text" rows="15" readonly>
-                ${msg("termsText")}
+        <div class="content">
+            <div class="form-group">
+            <textarea id="kc-terms-text" class="form-control" rows="15" readonly>
+            ${msg("termsText")}
             </textarea>
+            </div>
         </div>
 
         <div class="footer text-center">

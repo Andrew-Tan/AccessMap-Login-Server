@@ -5,11 +5,20 @@
     <#elseif section = "header">
         ${msg("emailVerifyTitle")}
     <#elseif section = "form">
-        <p class="text-primary">
-            ${msg("emailVerifyInstruction1")}
-        </p>
-        <p class="text-primary">
-            ${msg("emailVerifyInstruction2")} <a href="${url.loginAction}">${msg("doClickHere")}</a> ${msg("emailVerifyInstruction3")}
-        </p>
+    <div class="form">
+        <div class="content">
+            <div class="form-group">
+                <p class="text-primary">
+                ${msg("emailVerifyInstruction1")}
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p class="text-primary">
+                ${msg("emailVerifyInstruction2")} <a href="${url.loginAction}">${msg("doClickHere")}</a> ${msg("emailVerifyInstruction3")}
+                </p>
+            </div>
+        </div>
+    </div>
     </#if>
 </@layout.registrationLayout>

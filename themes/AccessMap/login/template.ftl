@@ -48,7 +48,7 @@
 		<#if message.type = 'warning'><div class="alert alert-warning"></#if>
 		<#if message.type = 'error'><div class="alert alert-danger"></#if>
 		<#if message.type = 'info'><div class="alert alert-info"></#if>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="alert-icon">
 					<#if message.type = 'success'><i class="material-icons">check</i></#if>
 					<#if message.type = 'warning'><i class="material-icons">warning</i></#if>
@@ -58,8 +58,7 @@
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true"><i class="material-icons">clear</i></span>
 				</button>
-
-				<b>Alert:</b> ${message.summary}
+				${message.summary}
 			</div>
 		</div>
 	</#if>
@@ -79,31 +78,11 @@
 
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
-					<li>
-    					<a href="../components-documentation.html" target="_blank">
-    						Components
-    					</a>
-    				</li>
     				<li>
-						<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">
-							<i class="material-icons">unarchive</i> Upgrade to PRO
+						<a href="/">
+							<i class="material-icons">home</i> Home
 						</a>
     				</li>
-		            <li>
-		                <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-twitter"></i>
-						</a>
-		            </li>
-		            <li>
-		                <a href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-facebook-square"></i>
-						</a>
-		            </li>
-					<li>
-		                <a href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-instagram"></i>
-						</a>
-		            </li>
 					<#if realm.internationalizationEnabled>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">${locale.current}</a>
@@ -126,16 +105,12 @@
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div class="card card-signup">
 							<#nested "form">
+
+							<#if displayInfo>
+								<#nested "info">
+							</#if>
 						</div>
 					</div>
-
-					<#if displayInfo>
-                        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                            <div class="card card-signup">
-								<#nested "info">
-                            </div>
-                        </div>
-					</#if>
 
 				</div>
 			</div>
@@ -144,30 +119,20 @@
 		        <div class="container">
 		            <nav class="pull-left">
 						<ul>
-							<li>
-								<a href="http://www.creative-tim.com">
-									Creative Tim
-								</a>
-							</li>
-							<li>
-								<a href="http://presentation.creative-tim.com">
-								   About Us
-								</a>
-							</li>
-							<li>
-								<a href="http://blog.creative-tim.com">
-								   Blog
-								</a>
-							</li>
-							<li>
-								<a href="http://www.creative-tim.com/license">
-									Licenses
-								</a>
-							</li>
+                            <li>
+                                <a href="https://accessmap.io">
+                                    AccessMap
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.accessmap.io/about">
+                                    About
+                                </a>
+                            </li>
 						</ul>
 		            </nav>
 		            <div class="copyright pull-right">
-		                &copy; 2016, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative Tim</a>
+		                &copy; 2017 AccessMap
 		            </div>
 		        </div>
 		    </footer>

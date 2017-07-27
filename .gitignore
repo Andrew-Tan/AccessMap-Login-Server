@@ -4,6 +4,7 @@
 ##       file so that they can be comitted.
 standalone/configuration/standalone.xml
 standalone/configuration/standalone-ha.xml
+standalone/configuration/logging.properties
 
 ### Linux template
 *~

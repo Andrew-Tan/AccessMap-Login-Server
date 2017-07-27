@@ -5,7 +5,7 @@
     <#elseif section = "header">
         ${msg("loginTotpTitle")}
     <#elseif section = "form">
-<ol id="kc-totp-settings">
+    <ol id="kc-totp-settings">
     <li>
         <p>${msg("loginTotpStep1")}</p>
         </li>

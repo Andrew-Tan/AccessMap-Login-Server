@@ -22,7 +22,6 @@
                     </div>
                 </#if>
             </div>
-            <p class="text-divider">Or Be Classical</p>
             <div class="content">
 
                 <div class="form-group label-floating">
@@ -53,22 +52,6 @@
                             </#if>
                         </label>
                     </div>
-
-                    <div class="checkbox">
-                        <label>
-                            <#if login.rememberMe??>
-                                <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked> ${msg("rememberMe")}
-                            <#else>
-                                <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3"> ${msg("rememberMe")}
-                            </#if>
-                        </label>
-                    </div>
-
-                    <#if realm.resetPasswordAllowed>
-                        <span class="label label-default">
-                            <a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
-                        </span>
-                    </#if>
                 </#if>
 
             </div>
@@ -79,9 +62,23 @@
         </form>
         </#if>
     <#elseif section = "info" >
-        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-            <div id="kc-registration">
-                <span>${msg("noAccount")} <a href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+        <#if realm.resetPasswordAllowed || (realm.password && realm.registrationAllowed && !usernameEditDisabled??)>
+            <div class="btn-group-sm">
+                <#if realm.resetPasswordAllowed>
+                    <a href="${url.loginResetCredentialsUrl}">
+                        <button class="btn btn-simple btn-sm" type="button">
+                        ${msg("doForgotPassword")}
+                        </button>
+                    </a>
+                </#if>
+
+                <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+                    <a href="${url.registrationUrl}">
+                        <button class="btn btn-simple btn-sm" type="button">
+                        ${msg("noAccount")} ${msg("doRegister")}
+                        </button>
+                    </a>
+                </#if>
             </div>
         </#if>
     </#if>

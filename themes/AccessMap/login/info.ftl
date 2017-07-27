@@ -5,8 +5,8 @@
     <#elseif section = "header">
     ${message.summary}
     <#elseif section = "form">
-    <div id="kc-info-message">
-        <p class="instruction">${message.summary}</p>
+    <div id="kc-info-message" class="text-center">
+        <p class="text-primary">${message.summary}</p>
         <#if skipLink??>
         <#else>
             <#if pageRedirectUri??>

@@ -40,8 +40,8 @@
         <div class="collapse navbar-collapse" id="navigation-index">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="realms/AccessMap/account" target="_blank">
-                        <i class="material-icons">dashboard</i> Account
+                    <a href="realms/AccessMap/account">
+                        <i class="material-icons">people</i> Account
                     </a>
                 </li>
                 <li>
@@ -63,14 +63,6 @@
                         <i class="fa fa-github"></i>
                     </a>
                 </li>
-                <li>
-                    <a rel="tooltip" title="Visit our blog" data-placement="bottom"
-                       href="https://accessmap.io" target="_blank"
-                       class="btn btn-white btn-simple btn-just-icon">
-                        <i class="fa fa-wordpress"></i>
-                    </a>
-                </li>
-
             </ul>
         </div>
     </div>
@@ -92,7 +84,8 @@
         </div>
     </div>
 
-    <div class="main main-raised">
+    <#if successMessage?has_content || errorMessage?has_content || bootstrap>
+        <div class="main main-raised">
         <div class="section section-basic">
             <div class="container">
             <#if successMessage?has_content>
@@ -155,8 +148,9 @@
             </#if>
             </div>
         </div>
-
     </div>
+    </#if>
+
     <footer class="footer">
         <div class="container">
             <nav class="pull-left">
@@ -176,49 +170,14 @@
                             Admin Console
                         </a>
                     </li>
-                    <li>
-                        <a href="http://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2016, made with <i class="material-icons">favorite</i> by Creative Tim for a better web.
+                &copy; 2017 AccessMap
             </div>
         </div>
     </footer>
 </div>
-
-<!-- Sart Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="material-icons">clear</i>
-                </button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                    language ocean. A small river named Duden flows by their place and supplies it with the necessary
-                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                    Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
-                    life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the
-                    far World of Grammar.
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-simple">Nice Button</button>
-                <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  End Modal -->
-
 
 </body>
 <!--   Core JS Files   -->

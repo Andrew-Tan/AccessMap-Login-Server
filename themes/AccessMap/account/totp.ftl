@@ -55,8 +55,10 @@
         <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}"/>
 
         <div class="footer text-center">
-            <button type="submit" class="btn btn-default btn-lg" name="submitAction" value="Cancel">${msg("doCancel")}</button>
-            <button type="submit" class="btn btn-primary btn-lg" name="submitAction" value="Save">${msg("doSave")}</button>
+            <button type="submit" class="btn btn-default btn-lg" name="submitAction"
+                    value="Cancel">${msg("doCancel")}</button>
+            <button type="submit" class="btn btn-primary btn-lg" name="submitAction"
+                    value="Save">${msg("doSave")}</button>
         </div>
     </form>
     </#if>

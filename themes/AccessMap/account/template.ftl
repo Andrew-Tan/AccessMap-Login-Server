@@ -50,7 +50,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="material-icons">language</i>
-                            ${locale.current}
+                        ${locale.current}
                             <i class="material-icons">arrow_drop_down</i>
                         </a>
                         <ul class="dropdown-menu">
@@ -104,7 +104,8 @@
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target="#example-navbar">
                                         <span class="sr-only">Toggle navigation</span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -132,7 +133,7 @@
                                         <li class="<#if active=='totp'>active</#if>">
                                             <a href="${url.totpUrl}">
                                                 <i class="material-icons">vpn_lock</i>
-                                                ${msg("authenticator")}
+                                            ${msg("authenticator")}
                                             </a>
                                         </li>
                                         <#if features.identityFederation>
@@ -197,35 +198,33 @@
                             <#nested "content">
                         </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <nav class="pull-left">
-                <ul>
-                    <li>
-                        <a href="https://accessmap.io">
-                            AccessMap
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.accessmap.io/about">
-                            About
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright pull-right">
-                &copy; 2017 AccessMap
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="https://accessmap.io">
+                                AccessMap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.accessmap.io/about">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; 2017 AccessMap
+                </div>
             </div>
-        </div>
-    </footer>
-
+        </footer>
 </body>
-
 </html>
 </#macro>

@@ -1,23 +1,23 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='social' bodyClass='social'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("federatedIdentitiesHtmlTitle")}</h2>
-        </div>
+<div class="row">
+    <div class="col-md-10">
+        <h2>${msg("federatedIdentitiesHtmlTitle")}</h2>
     </div>
+</div>
 
-    <form action="${url.passwordUrl}" class="form" method="post">
+<form action="${url.passwordUrl}" class="form" method="post">
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Provider</th>
-                <th>Username</th>
-                <th class="text-right">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Provider</th>
+            <th>Username</th>
+            <th class="text-right">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
             <#list federatedIdentity.identities as identity>
             <tr>
                 <td>${identity.displayName!}</td>
@@ -43,9 +43,9 @@
                 </td>
             </tr>
             </#list>
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 
-    </form>
+</form>
 
 </@layout.mainLayout>

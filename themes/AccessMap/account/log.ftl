@@ -1,35 +1,36 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='log' bodyClass='log'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("accountLogHtmlTitle")}</h2>
-        </div>
+<div class="row">
+    <div class="col-md-10">
+        <h2>${msg("accountLogHtmlTitle")}</h2>
     </div>
+</div>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>${msg("date")}</th>
-            <th>${msg("event")}</th>
-            <th>${msg("ip")}</th>
-            <th>${msg("client")}</th>
-            <th>${msg("details")}</th>
-        </tr>
-        </thead>
+<table class="table">
+    <thead>
+    <tr>
+        <th>${msg("date")}</th>
+        <th>${msg("event")}</th>
+        <th>${msg("ip")}</th>
+        <th>${msg("client")}</th>
+        <th>${msg("details")}</th>
+    </tr>
+    </thead>
 
-        <tbody>
+    <tbody>
         <#list log.events as event>
-            <tr>
-                <td>${event.date?datetime}</td>
-                <td>${event.event}</td>
-                <td>${event.ipAddress}</td>
-                <td>${event.client!}</td>
-                <td><#list event.details as detail>${detail.key} = ${detail.value} <#if detail_has_next>, </#if></#list></td>
-            </tr>
+        <tr>
+            <td>${event.date?datetime}</td>
+            <td>${event.event}</td>
+            <td>${event.ipAddress}</td>
+            <td>${event.client!}</td>
+            <td><#list event.details as detail>${detail.key} = ${detail.value} <#if detail_has_next>
+                , </#if></#list></td>
+        </tr>
         </#list>
-        </tbody>
+    </tbody>
 
-    </table>
+</table>
 
 </@layout.mainLayout>

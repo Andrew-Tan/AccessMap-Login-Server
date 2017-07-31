@@ -20,7 +20,18 @@
         <tbody>
             <#list federatedIdentity.identities as identity>
             <tr>
-                <td>${identity.displayName!}</td>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="mdi mdi-${identity.providerId!} mdi-dark mdi-24px"></i>
+                        </span>
+                        <label class="control-label">
+                            <p class="text-primary" style="font-size: 14px;">
+                                ${identity.displayName!}
+                            </p>
+                        </label>
+                    </div>
+                </td>
                 <td>${identity.userName!}</td>
                 <td class="td-actions text-right">
                     <#if identity.connected>

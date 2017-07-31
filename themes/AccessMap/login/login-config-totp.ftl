@@ -23,9 +23,14 @@
                 </ol>
             </div>
 
-            <div class="form-group label-floating">
-                <label class="control-label"></label>
-                <input type="text" id="totp" name="totp" autocomplete="off" class="form-control" />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">phonelink_lock</i>
+                </span>
+                <div class="form-group label-floating">
+                    <label class="control-label"></label>
+                    <input type="text" id="totp" name="totp" autocomplete="off" class="form-control" />
+                </div>
             </div>
 
             <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />

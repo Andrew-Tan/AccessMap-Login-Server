@@ -8,12 +8,12 @@
         <#if realm.password>
         <form class="form" id="kc-form-login" action="${url.loginAction}" method="post">
             <div class="header header-primary text-center">
-                <h4>Log In</h4>
+                <h4>${msg("loginTitle",(realm.displayName!''))}</h4>
                 <#if realm.password && social.providers??>
                     <div id="kc-social-providers" class="social-line">
                         <#list social.providers as p>
                             <a href="${p.loginUrl}" class="btn btn-simple btn-xs" title="${p.displayName}">
-                                <i class="fa fa-${p.alias}"></i> ${p.providerId}
+                                <i class="mdi mdi-${p.alias} mdi-light mdi-24px"></i>
                             </a>
                         </#list>
                     </div>
@@ -21,22 +21,32 @@
             </div>
             <div class="content">
 
-                <div class="form-group label-floating">
-                    <label class="control-label">
-                        <#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>
-                    </label>
-                    <#if usernameEditDisabled??>
-                        <input id="username" class="form-control" name="username" value="${(login.username!'')?html}"
-                               type="text" disabled/>
-                    <#else>
-                        <input id="username" class="form-control" name="username" value="${(login.username!'')?html}"
-                               type="text" autofocus autocomplete="off"/>
-                    </#if>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">person</i>
+                    </span>
+                    <div class="form-group label-floating">
+                        <label class="control-label">
+                            <#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>
+                        </label>
+                        <#if usernameEditDisabled??>
+                            <input id="username" class="form-control" name="username" value="${(login.username!'')?html}"
+                                   type="text" disabled/>
+                        <#else>
+                            <input id="username" class="form-control" name="username" value="${(login.username!'')?html}"
+                                   type="text" autofocus autocomplete="off"/>
+                        </#if>
+                    </div>
                 </div>
 
-                <div class="form-group label-floating">
-                    <label class="control-label">${msg("password")}</label>
-                    <input id="password" class="form-control" name="password" type="password" autocomplete="off" />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">lock_outline</i>
+                    </span>
+                    <div class="form-group label-floating">
+                        <label class="control-label">${msg("password")}</label>
+                        <input id="password" class="form-control" name="password" type="password" autocomplete="off" />
+                    </div>
                 </div>
 
                 <#if realm.rememberMe && !usernameEditDisabled??>
@@ -59,7 +69,7 @@
         </#if>
     <#elseif section = "info" >
         <#if realm.resetPasswordAllowed || (realm.password && realm.registrationAllowed && !usernameEditDisabled??)>
-            <div class="btn-group-sm">
+            <div class="btn-group-sm text-center">
                 <#if realm.resetPasswordAllowed>
                     <a href="${url.loginResetCredentialsUrl}">
                         <button class="btn btn-simple btn-sm" type="button">

@@ -47,9 +47,14 @@
     <form action="${url.totpUrl}" class="form" method="post">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
 
-        <div class="form-group label-floating">
-            <label for="totp" class="control-label">${msg("authenticatorCode")}</label>
-            <input type="text" class="form-control" id="totp" name="totp" autocomplete="off"/>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">phonelink_lock</i>
+            </span>
+            <div class="form-group label-floating">
+                <label for="totp" class="control-label">${msg("authenticatorCode")}</label>
+                <input type="text" class="form-control" id="totp" name="totp" autocomplete="off"/>
+            </div>
         </div>
 
         <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}"/>

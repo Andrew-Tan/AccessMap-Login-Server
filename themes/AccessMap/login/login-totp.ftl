@@ -7,9 +7,14 @@
     <#elseif section = "form">
         <form id="kc-totp-login-form" class="form" action="${url.loginAction}" method="post">
             <div class="content">
-                <div class="form-group label-floating">
-                    <label for="totp" class="control-label">${msg("loginTotpOneTime")}</label>
-                    <input id="totp" name="totp" autocomplete="off" type="text" class="form-control" autofocus/>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">phonelink_lock</i>
+                    </span>
+                    <div class="form-group label-floating">
+                        <label for="totp" class="control-label">${msg("loginTotpOneTime")}</label>
+                        <input id="totp" name="totp" autocomplete="off" type="text" class="form-control" autofocus/>
+                    </div>
                 </div>
             </div>
 

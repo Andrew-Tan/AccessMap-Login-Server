@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="welcome-content/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <title>AccessMap Account</title>
+    <title>OpenToAll Account</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 
@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navigation-index">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="realms/AccessMap/account">
+                    <a href="realms/OpenToAll/account">
                         <i class="material-icons">people</i> Account
                     </a>
                 </li>
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="brand">
-                        <h1>AccessMap Account</h1>
+                        <h1>OpenToAll Account</h1>
                         <h3>Control, protect, and secure your account, all in one place</h3>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2017 AccessMap
+                &copy; 2017 OpenToAll
             </div>
         </div>
     </footer>
@@ -194,19 +194,4 @@
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 <script src="welcome-content/material-kit.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-
-    $().ready(function () {
-        // the body of this function is in assets/material-kit.js
-        materialKit.initSliders();
-        window_width = $(window).width();
-
-        if (window_width >= 992) {
-            big_image = $('.wrapper > .header');
-
-            $(window).on('scroll', materialKitDemo.checkScrollForParallax);
-        }
-
-    });
-</script>
 </html>

@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
+<#macro registrationLayout displayInfo=false displayMessage=true>
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,26 +42,6 @@
 </head>
 
 <body class="signup-page">
-
-	<#if displayMessage && message?has_content>
-		<#if message.type = 'success'><div class="alert alert-success"></#if>
-		<#if message.type = 'warning'><div class="alert alert-warning"></#if>
-		<#if message.type = 'error'><div class="alert alert-danger"></#if>
-		<#if message.type = 'info'><div class="alert alert-info"></#if>
-			<div class="container">
-				<div class="alert-icon">
-					<#if message.type = 'success'><i class="material-icons">check</i></#if>
-					<#if message.type = 'warning'><i class="material-icons">warning</i></#if>
-					<#if message.type = 'error'><i class="material-icons">error_outline</i></#if>
-					<#if message.type = 'info'><i class="material-icons">info_outline</i></#if>
-				</div>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true"><i class="material-icons">clear</i></span>
-				</button>
-				${message.summary}
-			</div>
-		</div>
-	</#if>
 
 	<nav class="navbar navbar-transparent navbar-absolute">
     	<div class="container">
@@ -108,11 +88,33 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div class="card card-signup">
-							<#nested "form">
+                            <#nested "form">
 
 							<#if displayInfo>
 								<#nested "info">
 							</#if>
+
+                            <#if displayMessage && message?has_content>
+                                <#if message.type = 'success'><div class="alert alert-success"></#if>
+                                <#if message.type = 'warning'><div class="alert alert-warning"></#if>
+                                <#if message.type = 'error'><div class="alert alert-danger"></#if>
+                                <#if message.type = 'info'><div class="alert alert-info"></#if>
+                                <div class="container-fluid">
+                                    <div class="alert-icon col-xs-2">
+                                        <#if message.type = 'success'><i class="material-icons">check</i></#if>
+                                        <#if message.type = 'warning'><i class="material-icons">warning</i></#if>
+                                        <#if message.type = 'error'><i class="material-icons">error_outline</i></#if>
+                                        <#if message.type = 'info'><i class="material-icons">info_outline</i></#if>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <div class="col-xs-8">
+                                        ${message.summary}
+                                    </div>
+                                </div>
+                            </div>
+                            </#if>
 						</div>
 					</div>
 
@@ -136,7 +138,7 @@
 						</ul>
 		            </nav>
 		            <div class="copyright pull-right">
-		                &copy; 2017 AccessMap
+		                &copy; 2017 OpenToAll
 		            </div>
 		        </div>
 		    </footer>

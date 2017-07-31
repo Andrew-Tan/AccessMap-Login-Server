@@ -41,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">AccessMap</a>
+            <a class="navbar-brand">OpenToAll Account</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
@@ -221,7 +221,7 @@
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; 2017 AccessMap
+                    &copy; 2017 OpenToAll
                 </div>
             </div>
         </footer>

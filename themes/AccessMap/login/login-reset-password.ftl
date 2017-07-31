@@ -11,17 +11,22 @@
             </div>
             <div class="content">
 
-                <div class="form-group label-floating">
-                    <label for="username" class="control-label">
-                        <#if !realm.loginWithEmailAllowed>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">person</i>
+                    </span>
+                    <div class="form-group label-floating">
+                        <label for="username" class="control-label">
+                            <#if !realm.loginWithEmailAllowed>
                             ${msg("username")}
                         <#elseif !realm.registrationEmailAsUsername>
                             ${msg("usernameOrEmail")}
-                        <#else>
+                            <#else>
                             ${msg("email")}
-                        </#if>
-                    </label>
-                    <input type="text" id="username" name="username" class="form-control" autofocus/>
+                            </#if>
+                        </label>
+                        <input type="text" id="username" name="username" class="form-control" autofocus/>
+                    </div>
                 </div>
 
             </div>
@@ -36,12 +41,10 @@
     <#elseif section = "info">
         <div class="alert alert-info">
             <div class="container-fluid">
-                <div class="col-xs-1">
-                    <div class="alert-icon">
-                        <i class="material-icons">info_outline</i>
-                    </div>
+                <div class="alert-icon col-xs-2">
+                    <i class="material-icons">info_outline</i>
                 </div>
-                <div class="col-lg-10">${msg("emailInstruction")}</div>
+                <div class="col-xs-9">${msg("emailInstruction")}</div>
             </div>
         </div>
     </#if>

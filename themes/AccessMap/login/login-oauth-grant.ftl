@@ -7,11 +7,8 @@
     <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
     <#elseif section = "form">
     <form class="form" action="${url.oauthAction}" method="POST">
-        <div class="header header-primary text-center">
-            <h4>${msg("oauthGrantRequest")}</h4>
-        </div>
-
         <div class="content">
+            <h4>${msg("oauthGrantRequest")}</h4>
             <div class="form-group">
                 <ul>
                     <#if oauth.claimsRequested??>

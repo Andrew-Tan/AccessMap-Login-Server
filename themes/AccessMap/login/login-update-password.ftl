@@ -6,9 +6,6 @@
         ${msg("updatePasswordTitle")}
     <#elseif section = "form">
         <form class="form" id="kc-passwd-update-form" action="${url.loginAction}" method="post">
-            <div class="header header-primary text-center">
-                <h4>Update Password</h4>
-            </div>
             <div class="content">
                 <input type="text" readonly value="this is not a login form" style="display: none;">
                 <input type="password" readonly value="this is not a login form" style="display: none;">

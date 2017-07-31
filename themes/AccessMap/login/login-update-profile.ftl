@@ -6,9 +6,6 @@
         ${msg("loginProfileTitle")}
     <#elseif section = "form">
         <form class="form" id="kc-update-profile-form" action="${url.loginAction}" method="post">
-            <div class="header header-primary text-center">
-                <h4>Update Profile</h4>
-            </div>
             <div class="content">
                 <#if user.editUsernameAllowed>
                     <div class="form-group label-floating ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">

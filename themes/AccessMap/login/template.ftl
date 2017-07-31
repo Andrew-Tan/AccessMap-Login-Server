@@ -53,7 +53,6 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand"><#nested "title"></a>
         	</div>
 
         	<div class="collapse navbar-collapse" id="navigation">
@@ -88,6 +87,12 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div class="card card-signup">
+                            <div class="header header-primary text-center">
+                                <h4>${msg("loginTitle",(realm.displayName!''))}</h4>
+
+								<#nested "header-line">
+                            </div>
+
                             <#nested "form">
 
 							<#if displayInfo>

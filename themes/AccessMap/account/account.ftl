@@ -17,44 +17,64 @@
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
 
         <#if !realm.registrationEmailAsUsername>
-            <div class="form-group label-floating ${messagesPerField.printIfExists('username','has-error')}">
-                <label for="username" class="control-label">
-                ${msg("username")}
-                    <#if realm.editUsernameAllowed><span class="required">*</span></#if>
-                </label>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">person</i>
+                </span>
+                <div class="form-group label-floating ${messagesPerField.printIfExists('username','has-error')}">
+                    <label for="username" class="control-label">
+                    ${msg("username")}
+                        <#if realm.editUsernameAllowed><span class="required">*</span></#if>
+                    </label>
 
-                <input type="text" class="form-control" id="username" name="username"
-                       <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
+                    <input type="text" class="form-control" id="username" name="username"
+                           <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
+                </div>
             </div>
         </#if>
 
-        <div class="form-group label-floating ${messagesPerField.printIfExists('email','has-error')}">
-            <label for="email" class="control-label">
-            ${msg("email")}
-                <span class="required">*</span>
-            </label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">email</i>
+            </span>
+            <div class="form-group label-floating ${messagesPerField.printIfExists('email','has-error')}">
+                <label for="email" class="control-label">
+                ${msg("email")}
+                    <span class="required">*</span>
+                </label>
 
-            <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')?html}"/>
+                <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')?html}"/>
+            </div>
         </div>
 
-        <div class="form-group label-floating ${messagesPerField.printIfExists('firstName','has-error')}">
-            <label for="firstName" class="control-label">
-            ${msg("firstName")}
-                <span class="required">*</span>
-            </label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">face</i>
+            </span>
+            <div class="form-group label-floating ${messagesPerField.printIfExists('firstName','has-error')}">
+                <label for="firstName" class="control-label">
+                ${msg("firstName")}
+                    <span class="required">*</span>
+                </label>
 
-            <input type="text" class="form-control" id="firstName" name="firstName"
-                   value="${(account.firstName!'')?html}"/>
+                <input type="text" class="form-control" id="firstName" name="firstName"
+                       value="${(account.firstName!'')?html}"/>
+            </div>
         </div>
 
-        <div class="form-group label-floating ${messagesPerField.printIfExists('lastName','has-error')}">
-            <label for="lastName" class="control-label">
-            ${msg("lastName")}
-                <span class="required">*</span>
-            </label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">face</i>
+            </span>
+            <div class="form-group label-floating ${messagesPerField.printIfExists('lastName','has-error')}">
+                <label for="lastName" class="control-label">
+                ${msg("lastName")}
+                    <span class="required">*</span>
+                </label>
 
-            <input type="text" class="form-control" id="lastName" name="lastName"
-                   value="${(account.lastName!'')?html}"/>
+                <input type="text" class="form-control" id="lastName" name="lastName"
+                       value="${(account.lastName!'')?html}"/>
+            </div>
         </div>
 
     </div>

@@ -6,9 +6,6 @@
         ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))}
     <#elseif section = "form">
         <form class="form" id="kc-register-form" action="${url.registrationAction}" method="post">
-            <div class="header header-primary text-center">
-                <h4>Register</h4>
-            </div>
             <div class="content">
                 <input type="text" readonly value="this is not a login form" style="display: none;">
                 <input type="password" readonly value="this is not a login form" style="display: none;">

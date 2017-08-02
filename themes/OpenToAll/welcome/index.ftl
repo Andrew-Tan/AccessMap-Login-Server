@@ -41,24 +41,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="realms/OpenToAll/account">
-                        <i class="material-icons">people</i> Account
-                    </a>
-                </li>
-                <li>
-                    <a href="./" target="_blank">
-                        <i class="material-icons">forum</i> Blog
-                    </a>
-                </li>
-                <li>
-                    <a rel="tooltip" title="Follow us on Twitter" data-placement="bottom"
-                       href="https://twitter.com/AccessMapSea" target="_blank"
-                       class="btn btn-white btn-simple btn-just-icon">
-                        <i class="fa fa-twitter"></i>
+                        <i class="material-icons">person</i> Account
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="Visit our Github" data-placement="bottom"
-                       href="https://github.com/AccessMap" target="_blank"
+                       href="https://github.com/Open-to-All" target="_blank"
                        class="btn btn-white btn-simple btn-just-icon">
                         <i class="fa fa-github"></i>
                     </a>
@@ -156,13 +144,8 @@
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="https://accessmap.io">
-                            AccessMap
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.accessmap.io/about">
-                            About
+                        <a href="https://open-to-all.com">
+                            OpenToAll
                         </a>
                     </li>
                     <li>

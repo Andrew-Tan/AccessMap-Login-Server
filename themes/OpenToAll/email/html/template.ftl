@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
     <meta name="format-detection" content="date=no"> <!-- disable auto date linking in iOS 7-9 -->
     <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS 7-9 -->
-    <title>AccessMap Account Management</title>
+    <title>OpenToAll Account Management</title>
 
     <style type="text/css">
         body {
@@ -113,7 +113,7 @@
                 <tr>
                     <td class="container-padding header" align="left"
                         style="font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;padding-bottom:12px;color:#DF4726;padding-left:24px;padding-right:24px">
-                        AccessMap Account
+                        OpenToAll Account
                     </td>
                 </tr>
                 <tr>
@@ -129,11 +129,11 @@
                     <td class="container-padding footer-text" align="left"
                         style="font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:16px;color:#aaaaaa;padding-left:24px;padding-right:24px">
                         <br><br>
-                        © 2017 AccessMap
+                        © 2017 OpenToAll
                         <br><br>
 
-                        You are receiving this email because you opted in on AccessMap. <a
-                            href="https://oauth.accessmap.io" style="color:#aaaaaa">Log in</a> to your account.
+                        You are receiving this email because you opted in on OpenToAll. <a
+                            href="https://accounts.open-to-all.com" style="color:#aaaaaa">Log in</a> to your account.
                         <br><br>
 
                         <strong>The Taskar Center for Accessible Technology</strong><br>

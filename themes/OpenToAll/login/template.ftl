@@ -131,13 +131,8 @@
 		            <nav class="pull-left">
 						<ul>
                             <li>
-                                <a href="https://accessmap.io">
-                                    AccessMap
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.accessmap.io/about">
-                                    About
+                                <a href="https://open-to-all.com">
+                                    OpenToAll
                                 </a>
                             </li>
 						</ul>

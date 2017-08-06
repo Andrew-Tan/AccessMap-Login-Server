@@ -1,4 +1,4 @@
-<#macro registrationLayout displayInfo=false displayMessage=true>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
 <!doctype html>
 <html lang="en">
 <head>

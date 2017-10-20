@@ -7,11 +7,15 @@
     <#elseif section = "header-line">
         <#if realm.password && social.providers??>
         <div id="kc-social-providers" class="social-line">
-            <#list social.providers as p>
-                <a href="${p.loginUrl}" class="btn btn-simple btn-xs" title="${p.displayName}">
-                    <i class="mdi mdi-${p.alias} mdi-light mdi-24px"></i>
-                </a>
-            </#list>
+            <div class="row">
+                <#list social.providers as p>
+                    <div class="col-md-12">
+                        <a href="${p.loginUrl}" class="btn btn-simple btn-sm" title="${p.displayName}">
+                            <i class="mdi mdi-${p.alias} mdi-light mdi-24px"></i> Login with ${p.displayName}
+                        </a>
+                    </div>
+                </#list>
+            </div>
         </div>
         </#if>
     <#elseif section = "form">
